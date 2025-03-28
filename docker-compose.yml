@@ -1,0 +1,13 @@
+services:
+  angular:
+    build: .
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./src/playing-cards:/app  # Monte le dossier courant
+    networks:
+      - playing_card_network
+
+networks:
+  playing_card_network:
+    driver: bridge
